@@ -10,7 +10,7 @@
 	<ul>
 		<!-- out.print 축약한 것 -->
 		<li><a href="<%= request.getContextPath() %>/user/register.jsp">회원가입</a>
-		<li><a href="../login.jsp">로그인</a>
+		<li><a href="../login.jsp">로그인안녕</a>
 		<li><a href="<%= request.getContextPath() %>/list.kdata">회원리스트</a>
 	
 	</ul>
