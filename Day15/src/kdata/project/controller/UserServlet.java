@@ -18,7 +18,8 @@ import kdata.project.service.UserService;
 /**
  * Servlet implementation class UserServlet
  */
-@WebServlet("*.kdata")
+//@WebServlet("*.kdata")
+// Controller
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

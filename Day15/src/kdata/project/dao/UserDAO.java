@@ -19,11 +19,40 @@ public class UserDAO {
 	private UserDAO() {
 		
 	}
-	
 	// 외부에서 부를 수 있게 static으로 만듬
 	public static UserDAO getInstance() {
 		return dao;
 	}
+		
+	public int idcheck(String id) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+				
+		try {
+			con = DBUtil.getConnection();
+			String sql = "select * from users where id= ?";
+			//3. Statement 객체 생성
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			// 4. SQL문 전송
+			rs = pstmt.executeQuery();
+			System.out.println(pstmt);
+			// id가 있으니 중복된 것, so 사용 불가능
+			if(rs.next()) {
+				return 0;
+			// 사용 가능
+			}else {
+				return 1;
+			}
+			
+		}finally {
+			DBUtil.close(con, pstmt, rs);
+		}
+	}
+	
+	
 	// ------------------------------------------
 	// 회원가입, 반환형은 성공했다 or 실패했다를 알려주는 int, boolean으로 해도 됨
 	public int insert(UserDTO dto) throws SQLException {
@@ -84,6 +113,7 @@ public class UserDAO {
 		}finally {
 			DBUtil.close(con, pstmt, rs);
 		}
+		
 		return list; 
 	}
 	

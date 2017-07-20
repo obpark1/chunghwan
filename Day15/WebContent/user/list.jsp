@@ -12,7 +12,9 @@
 </head>
 <body>
 회원가입 - list.jsp
-<% List<UserDTO> list = (List<UserDTO>)request.getAttribute("list"); %>
+<%
+
+List<UserDTO> list = (List<UserDTO>)request.getAttribute("list"); %>
 
 <!-- EL로 간단히 쓸 수 있음. out.print도 기능에 포함됨 -->
 <%-- ${ list } --%>

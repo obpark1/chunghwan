@@ -12,7 +12,7 @@ public class UserDeleteService implements UserService {
 	@Override
 	public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		System.out.println("2. UserRegisterService execuete");
+		System.out.println("2. UserDeleteService execuete");
 		String id = request.getParameter("id");
 		int result=0;
 		

@@ -6,6 +6,13 @@ import java.util.Date;
 public class UserDTO implements Serializable{
 	private String id;
 	private String pw;
+	public UserDTO(String id, String pw, String name, String profile) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.name = name;
+		this.Profile = profile;
+	}
 	private String name;
 	private String Profile;
 	private Date reg_date;

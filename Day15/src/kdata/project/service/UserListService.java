@@ -14,7 +14,7 @@ public class UserListService implements UserService {
 
 	@Override
 	public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("2. UserRegisterService execuete");
+		System.out.println("2. UserListService execuete");
 		// 1. 요청 파라미터 처리
 		//	없음
 		
@@ -32,7 +32,7 @@ public class UserListService implements UserService {
 		
 		// 3. DB결과 처리
 		request.setAttribute("list", list);
-		
+		System.out.println(list.size());
 
 		// 4. 이동할 다음 페이지 처리
 		NextPage nextPage = new NextPage();
